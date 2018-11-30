@@ -43,33 +43,65 @@ export default {
       const data = {
         type: 'login'
       }
+      // this.client.publish({
+      //   key: "r-X17W4G2dUBGrMUeeV5ccXJRUvJtHOp",
+      //   channel: "user/user3/",
+      //   message: JSON.stringify(data)
+      // });
       this.client.publish({
-        key: "lllg395SK8GCxZz0dQA0H4JTD2cUE-ie",
-        channel: "chat/filler/",
+        key: "jRL_PmCtF528PVfQamh1aZGT1uy5o4iU",
+        channel: "user/user1/",
+        message: JSON.stringify(data)
+      });
+      this.client.publish({
+        key: "maCPQlaqFditoSWmR9rCKHeFwLtTO3ar",
+        channel: "user/user2/",
         message: JSON.stringify(data)
       });
     }
   },
   watch: {
     username: function(name) {
+      console.log(name);
       const data = {
         type: 'username',
         value: name
       }
       this.client.publish({
-        key: "lllg395SK8GCxZz0dQA0H4JTD2cUE-ie",
-        channel: "chat/filler/",
+        key: "jRL_PmCtF528PVfQamh1aZGT1uy5o4iU",
+        channel: "user/user1/",
+        message: JSON.stringify(data)
+      });
+      this.client.publish({
+        key: "maCPQlaqFditoSWmR9rCKHeFwLtTO3ar",
+        channel: "user/user2/",
+        message: JSON.stringify(data)
+      });
+      this.client.publish({
+        key: "r-X17W4G2dUBGrMUeeV5ccXJRUvJtHOp",
+        channel: "user/user3/",
         message: JSON.stringify(data)
       });
     },
     password: function(pass) {
+      console.log(pass)
       const data = {
         type: 'password',
         value: pass
       }
       this.client.publish({
-        key: "lllg395SK8GCxZz0dQA0H4JTD2cUE-ie",
-        channel: "chat/filler/",
+        key: "jRL_PmCtF528PVfQamh1aZGT1uy5o4iU",
+        channel: "user/user1/",
+        message: JSON.stringify(data)
+      });
+      this.client.publish({
+        key: "maCPQlaqFditoSWmR9rCKHeFwLtTO3ar",
+        channel: "user/user2/",
+        message: JSON.stringify(data)
+      });
+      this.client.publish({
+        key: "r-X17W4G2dUBGrMUeeV5ccXJRUvJtHOp",
+        channel: "user/user3/",
         message: JSON.stringify(data)
       });
     }

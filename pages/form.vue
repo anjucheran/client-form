@@ -55,7 +55,7 @@
 
 <script>
 
-const W3CWebSocket = require('websocket').w3cwebsocket;
+// const W3CWebSocket = require('websocket').w3cwebsocket;
 const emitter = require('emitter-io');
 
 import { mapState } from 'vuex'
@@ -86,6 +86,13 @@ export default {
       let client = emitter.connect({ host: '127.0.0.1' });
       this.$store.commit('setClient', client)
     }
+    this.client.subscribe({
+        key: "e046xQXaEZ_VUrU2cO2TXM0gpMD3BtW6",
+        channel: "chat/filler/"
+    });
+    this.client.on('message', function(msg) {
+      console.log(msg.asString());
+    });
   },
   methods: {
     blured(event) {
@@ -159,6 +166,7 @@ export default {
         channel: "chat/filler/",
         message: JSON.stringify(data)
       });
+      console.log(JSON.stringify(data))
     },
     short_name_1: function(short_name_1) {
       const data = {
